@@ -4,3 +4,7 @@ const { instance } = await WebAssembly.instantiate(
 
 const answer = instance.exports.the_answer();
 console.log(answer);
+
+function handler(_req: Request): Response {
+  return new Response("Hello, World" + instance.exports.the_answer());
+}

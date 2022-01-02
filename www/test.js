@@ -5,6 +5,6 @@ const { instance } = await WebAssembly.instantiate(
 const answer = instance.exports.the_answer();
 console.log(answer);
 
-function handler(_req: Request): Response {
+function handler(_req) {
   return new Response("Hello, World" + instance.exports.the_answer());
 }
